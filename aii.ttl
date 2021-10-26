@@ -11,55 +11,68 @@ foo:hasUnit a rdf:Property ;
     rdfs:range foo:Unit .
 
 aii:gei4ju1n a rdfs:Class ;
+    rdfs:isDefinedBy <https://aii.example.com/> ;
     rdfs:subClassOf foo:Food ;
     rdfs:label "Salt" .
 
 aii:gek3oepa a rdfs:Class ;
+    rdfs:isDefinedBy <https://aii.example.com/> ;
     rdfs:subClassOf foo:Food ;
     rdfs:label "Egg" .
 
 aii:ohhae0ie a rdfs:Class ;
+    rdfs:isDefinedBy <https://aii.example.com/> ;
     rdfs:subClassOf foo:Food ;
     rdfs:label "Olive oil" .
 
 aii:io6eeyoh a rdfs:Class ;
+    rdfs:isDefinedBy <https://aii.example.com/> ;
     rdfs:subClassOf aii:gek3oepa ;
     rdfs:label "Free Range Egg" .
 
 aii:eizoh2so a rdfs:Class ;
+    rdfs:isDefinedBy <https://aii.example.com/> ;
     rdfs:subClassOf aii:gei4ju1n ;
     rdfs:label "Sea Salt" .
 
 aii:nei6aeth a rdfs:Class ;
+    rdfs:isDefinedBy <https://aii.example.com/> ;
     rdfs:subClassOf aii:ohhae0ie ;
     rdfs:label "Olive Oil (virgin)" .
 
 aii:hohchae4 a rdfs:Class ;
+    rdfs:isDefinedBy <https://aii.example.com/> ;
     rdfs:subClassOf aii:nei6aeth ;
     rdfs:label "Olive Oil (extra virgin)" .
 
 aii:utu4eihia a rdfs:Class ;
+    rdfs:isDefinedBy <https://aii.example.com/> ;
     rdfs:subClassOf foo:Unit ;
     rdfs:label "Count" .
 
 aii:eegh6vuy a rdfs:Class ;
+    rdfs:isDefinedBy <https://aii.example.com/> ;
     rdfs:subClassOf foo:Unit ;
     rdfs:label "Kilo Gram" .
 
 aii:eer4kooh a rdfs:Class ;
+    rdfs:isDefinedBy <https://aii.example.com/> ;
     rdfs:subClassOf foo:Unit ;
     rdfs:label "Litre" .
 
 aii:esahj3ju a rdf:Property ;
+    rdfs:isDefinedBy <https://aii.example.com/> ;
     rdfs:domain foo:Food ;
     rdfs:label "expiry date" .
 
 aii:ahch9aix a rdf:Property ;
+    rdfs:isDefinedBy <https://aii.example.com/> ;
     rdfs:domain foo:Food ;
     rdfs:range aii:tei2jeez ;
     rdfs:label "customer" .
 
 aii:tei2jeez a rdfs:Class ;
+    rdfs:isDefinedBy <https://aii.example.com/> ;
     rdfs:label "Customer account" .
     
 aii:pah7chae a aii:tei2jeez ;
