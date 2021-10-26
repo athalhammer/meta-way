@@ -1,4 +1,4 @@
-@prefix foo: <https://upper-ontology.example.com/>.
+@prefix : <#>.
 @prefix aii: <https://aii.example.com/>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
@@ -6,17 +6,17 @@
 
 aii:gei4ju1n a rdfs:Class ;
     rdfs:isDefinedBy <https://aii.example.com/> ;
-    rdfs:subClassOf foo:Food ;
+    rdfs:subClassOf :Food ;
     rdfs:label "Salt" .
 
 aii:gek3oepa a rdfs:Class ;
     rdfs:isDefinedBy <https://aii.example.com/> ;
-    rdfs:subClassOf foo:Food ;
+    rdfs:subClassOf :Food ;
     rdfs:label "Egg" .
 
 aii:ohhae0ie a rdfs:Class ;
     rdfs:isDefinedBy <https://aii.example.com/> ;
-    rdfs:subClassOf foo:Food ;
+    rdfs:subClassOf :Food ;
     rdfs:label "Olive oil" .
 
 aii:io6eeyoh a rdfs:Class ;
@@ -41,27 +41,27 @@ aii:hohchae4 a rdfs:Class ;
 
 aii:utu4eihia a rdfs:Class ;
     rdfs:isDefinedBy <https://aii.example.com/> ;
-    rdfs:subClassOf foo:Unit ;
+    rdfs:subClassOf :Unit ;
     rdfs:label "Count" .
 
 aii:eegh6vuy a rdfs:Class ;
     rdfs:isDefinedBy <https://aii.example.com/> ;
-    rdfs:subClassOf foo:Unit ;
+    rdfs:subClassOf :Unit ;
     rdfs:label "Kilo Gram" .
 
 aii:eer4kooh a rdfs:Class ;
     rdfs:isDefinedBy <https://aii.example.com/> ;
-    rdfs:subClassOf foo:Unit ;
+    rdfs:subClassOf :Unit ;
     rdfs:label "Litre" .
 
 aii:esahj3ju a rdf:Property ;
     rdfs:isDefinedBy <https://aii.example.com/> ;
-    rdfs:domain foo:Food ;
+    rdfs:domain :Food ;
     rdfs:label "expiry date" .
 
 aii:ahch9aix a rdf:Property ;
     rdfs:isDefinedBy <https://aii.example.com/> ;
-    rdfs:domain foo:Food ;
+    rdfs:domain :Food ;
     rdfs:range aii:tei2jeez ;
     rdfs:label "customer" .
 
@@ -76,19 +76,19 @@ aii:eighe8th a aii:io6eeyoh ;
     rdfs:label "Alice's Eggs" ; # for visualization purposes
     aii:ahch9aix aii:pah7chae ;
     aii:esahj3ju "2021-20-21"^^xsd:date ;
-    foo:hasUnit aii:utu4eihia ;
+    :hasUnit aii:utu4eihia ;
     rdf:value 10 .
 
 aii:deegho6c a aii:eizoh2so ;
     rdfs:label "Alice's Salt" ; # for visualization purposes
     aii:ahch9aix aii:pah7chae ;
-    foo:hasUnit aii:eegh6vuy ;
+    :hasUnit aii:eegh6vuy ;
     rdf:value 1 .
 
 aii:gee8ovee a aii:hohchae4 ;
     rdfs:label "Alice's Oil" ; # for visualization purposes
     aii:ahch9aix aii:pah7chae ;
     aii:esahj3ju "2022-03-10"^^xsd:date ;
-    foo:hasUnit aii:eer4kooh ;
+    :hasUnit aii:eer4kooh ;
     rdf:value 1 .
 
