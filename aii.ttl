@@ -1,0 +1,87 @@
+@prefix foo: <https://upper-ontology.example.com/>.
+@prefix aii: <https://aii.example.com/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+foo:Food a rdfs:Class .
+foo:Unit a rdfs:Class .
+foo:hasUnit a rdf:Property ;
+    rdfs:domain foo:Food ;
+    rdfs:range foo:Unit .
+
+aii:gei4ju1n a rdfs:Class ;
+    rdfs:subClassOf foo:Food ;
+    rdfs:label "Salt" .
+
+aii:gek3oepa a rdfs:Class ;
+    rdfs:subClassOf foo:Food ;
+    rdfs:label "Egg" .
+
+aii:ohhae0ie a rdfs:Class ;
+    rdfs:subClassOf foo:Food ;
+    rdfs:label "Olive oil" .
+
+aii:io6eeyoh a rdfs:Class ;
+    rdfs:subClassOf aii:gek3oepa ;
+    rdfs:label "Free Range Egg" .
+
+aii:eizoh2so a rdfs:Class ;
+    rdfs:subClassOf aii:gei4ju1n ;
+    rdfs:label "Sea Salt" .
+
+aii:nei6aeth a rdfs:Class ;
+    rdfs:subClassOf aii:ohhae0ie ;
+    rdfs:label "Olive Oil (virgin)" .
+
+aii:hohchae4 a rdfs:Class ;
+    rdfs:subClassOf aii:nei6aeth ;
+    rdfs:label "Olive Oil (extra virgin)" .
+
+aii:utu4eihia a rdfs:Class ;
+    rdfs:subClassOf foo:Unit ;
+    rdfs:label "Count" .
+
+aii:eegh6vuy a rdfs:Class ;
+    rdfs:subClassOf foo:Unit ;
+    rdfs:label "Kilo Gram" .
+
+aii:eer4kooh a rdfs:Class ;
+    rdfs:subClassOf foo:Unit ;
+    rdfs:label "Litre" .
+
+aii:esahj3ju a rdf:Property ;
+    rdfs:domain foo:Food ;
+    rdfs:label "expiry date" .
+
+aii:ahch9aix a rdf:Property ;
+    rdfs:domain foo:Food ;
+    rdfs:range aii:tei2jeez ;
+    rdfs:label "customer" .
+
+aii:tei2jeez a rdfs:Class ;
+    rdfs:label "Customer account" .
+    
+aii:pah7chae a aii:tei2jeez ;
+    rdfs:label "Alice" . # for visualization purposes
+
+aii:eighe8th a aii:io6eeyoh ;
+    rdfs:label "Alice's Eggs" ; # for visualization purposes
+    aii:ahch9aix aii:pah7chae ;
+    aii:esahj3ju "2021-20-21"^^xsd:date ;
+    foo:hasUnit aii:utu4eihia ;
+    rdf:value 10 .
+
+aii:deegho6c a aii:eizoh2so ;
+    rdfs:label "Alice's Salt" ; # for visualization purposes
+    aii:ahch9aix aii:pah7chae ;
+    foo:hasUnit aii:eegh6vuy ;
+    rdf:value 1 .
+
+aii:gee8ovee a aii:hohchae4 ;
+    rdfs:label "Alice's Oil" ; # for visualization purposes
+    aii:ahch9aix aii:pah7chae ;
+    aii:esahj3ju "2022-03-10"^^xsd:date ;
+    foo:hasUnit aii:eer4kooh ;
+    rdf:value 1 .
+

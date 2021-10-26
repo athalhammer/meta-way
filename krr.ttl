@@ -1,0 +1,82 @@
+@prefix foo: <https://upper-ontology.example.com/>.
+@prefix krr: <https://krr.example.com/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+
+foo:Food a rdfs:Class .
+foo:Unit a rdfs:Class .
+foo:hasUnit a rdf:Property ;
+    rdfs:domain foo:Food ;
+    rdfs:range foo:Unit .
+
+krr:yei4ha8j a rdfs:Class ;
+    rdfs:subClassOf foo:Food ;
+    rdfs:label "Salt" .
+
+krr:thutal0u a rdfs:Class ;
+    rdfs:subClassOf foo:Food ;
+    rdfs:label "Egg" .
+    
+krr:ohdae5a a rdfs:Class ;
+    rdfs:subClassOf foo:Food ;
+    rdfs:label "Olive oil" .
+
+krr:thie2en a rdf:Property ;
+    rdfs:label "origin" .
+
+krr:rueth0du a rdf:Property ;
+    rdfs:label "quality" .
+
+krr:joow8vou a rdfs:Class ;
+    rdfs:label "Sea" .
+
+krr:teingee9 a rdfs:Class ;
+    rdfs:subClassOf krr:ahg7aesh ;
+    rdfs:label "Extra Virgin" .
+
+krr:ahg7aesh a rdfs:Class ;
+    rdfs:label "Virgin" .
+
+krr:aew8if5i a rdfs:Class ;
+    rdfs:subClassOf foo:Unit ;
+    rdfs:label "Count" .
+    
+krr:eich9ahbi a rdfs:Class ;
+    rdfs:subClassOf foo:Unit ;
+    rdfs:label "Tea Spoon" .
+
+krr:uw8feu2ji a rdfs:Class ;
+    rdfs:subClassOf foo:Unit ;
+    rdfs:label "Gram" .
+
+krr:oong2oogi a rdfs:Class ;
+    rdfs:label "Recipe" .
+
+krr:yee3zei8 a rdf:Property ;
+    rdfs:label "ingredient of" ;
+    rdfs:domain foo:Food ;
+    rdfs:range krr:oong2oogi .
+
+krr:ootafai8i a krr:oong2oogi ;
+    rdfs:label "Scrambled eggs with olive oil (extra virgin) and sea salt" .
+
+krr:seoqu4vi a krr:thutal0u ;
+    krr:yee3zei8 krr:oong2oogi ;
+    rdfs:label "Recipe Eggs" ; # for visualization purposes
+    foo:hasUnit krr:aew8if5i ;
+    rdf:value 3 .
+
+krr:uoleith3a a krr:yei4ha8j ;
+    krr:yee3zei8 krr:oong2oogi ;
+    rdfs:label "Recipe Salt" ; # for visualization purposes
+    foo:hasUnit krr:eich9ahbi ;
+    rdf:value 1 ;
+    krr:thie2en krr:joow8vou .
+
+krr:iezi0oht a krr:ohdae5a ;
+    krr:yee3zei8 krr:oong2oogi ;
+    rdfs:label "Recipe Olive Oil" ; # for visualization purposes
+    foo:hasUnit krr:uw8feu2ji ;
+    rdf:value 10 ;
+    krr:rueth0du krr:teingee9 .
+
