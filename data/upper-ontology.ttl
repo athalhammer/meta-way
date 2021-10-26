@@ -1,12 +1,12 @@
-@prefix foo: <https://upper-ontology.example.com/>.
+@prefix : <#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 
-foo:Food a rdfs:Class ;
+:Food a rdfs:Class ;
     rdfs:label "Food" .
-foo:Unit a rdfs:Class ;
+:Unit a rdfs:Class ;
     rdfs:label "Unit" .
-foo:hasUnit a rdf:Property ;
+:hasUnit a rdf:Property ;
     rdfs:label "has unit" ;
     rdfs:domain foo:Food ;
     rdfs:range foo:Unit .
