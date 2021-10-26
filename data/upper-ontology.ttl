@@ -8,5 +8,5 @@
     rdfs:label "Unit" .
 :hasUnit a rdf:Property ;
     rdfs:label "has unit" ;
-    rdfs:domain foo:Food ;
-    rdfs:range foo:Unit .
+    rdfs:domain :Food ;
+    rdfs:range :Unit .
