@@ -1,0 +1,10 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX foo: <https://upper-ontology.example.com/>
+SELECT ?prod ?upperClass (COUNT(?upperClass) AS ?count)  WHERE {
+  ?s rdfs:subClassOf+ ?upperClass .
+  ?s rdfs:isDefinedBy ?prod.
+  VALUES ?upperClass {
+    foo:Unit
+    foo:Food
+  } 
+} GROUP BY ?prod ?upperClass
