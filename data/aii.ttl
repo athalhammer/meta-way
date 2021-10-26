@@ -4,12 +4,6 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 
-foo:Food a rdfs:Class .
-foo:Unit a rdfs:Class .
-foo:hasUnit a rdf:Property ;
-    rdfs:domain foo:Food ;
-    rdfs:range foo:Unit .
-
 aii:gei4ju1n a rdfs:Class ;
     rdfs:isDefinedBy <https://aii.example.com/> ;
     rdfs:subClassOf foo:Food ;

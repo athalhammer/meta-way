@@ -3,12 +3,6 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 
-foo:Food a rdfs:Class .
-foo:Unit a rdfs:Class .
-foo:hasUnit a rdf:Property ;
-    rdfs:domain foo:Food ;
-    rdfs:range foo:Unit .
-
 krr:yei4ha8j a rdfs:Class ;
     rdfs:isDefinedBy <https://krr.example.com/> ;
     rdfs:subClassOf foo:Food ;
