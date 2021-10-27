@@ -77,7 +77,7 @@ WHERE {
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <https://raw.githubusercontent.com/kidehen/meta-way/main/data/upper-ontology.ttl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-prefix aii: <https://aii.example.com/>
+PREFIX aii: <https://aii.example.com/>
 
 SELECT DISTINCT * 
 FROM <https://raw.githubusercontent.com/kidehen/meta-way/main/data/upper-ontology.ttl> 
