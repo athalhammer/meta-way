@@ -9,15 +9,19 @@ Following are some queries:
 ## Counting the number of classes per data product
 ```
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX foo: <https://upper-ontology.example.com/>
-SELECT ?prod ?upperClass (COUNT(?upperClass) AS ?count)  WHERE {
-  ?s rdfs:subClassOf+ ?upperClass .
-  ?s rdfs:isDefinedBy ?prod.
-  VALUES ?upperClass {
-    foo:Unit
-    foo:Food
-  } 
-} GROUP BY ?prod ?upperClass
+PREFIX : <https://raw.githubusercontent.com/kidehen/meta-way/main/data/upper-ontology.ttl#>
+
+SELECT ?prod ?upperClass (COUNT(?upperClass) AS ?count)  
+FROM <https://raw.githubusercontent.com/kidehen/meta-way/main/data/upper-ontology.ttl> 
+FROM <https://github.com/kidehen/meta-way/blob/main/data/krr.ttl> 
+FROM <https://github.com/kidehen/meta-way/blob/main/data/aii.ttl>
+
+WHERE {
+        ?s rdfs:subClassOf+ ?upperClass .
+        ?s rdfs:isDefinedBy ?prod.
+        VALUES ?upperClass {:Unit :Food} 
+} 
+GROUP BY ?prod ?upperClass
 ```
 |prod                    |upperClass                             |count|
 |------------------------|---------------------------------------|-----|
@@ -26,19 +30,25 @@ SELECT ?prod ?upperClass (COUNT(?upperClass) AS ?count)  WHERE {
 |https://krr.example.com/|https://upper-ontology.example.com/Food|3    |
 |https://aii.example.com/|https://upper-ontology.example.com/Food|7    |
 
-## Scrambled eggs with olive oil (extra virgin) and sea salt.
+* [Live Query Results Page](http://linkeddata.uriburner.com/sparql/?default-graph-uri=&query=PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+%3A+%3Chttps%3A%2F%2Fraw.githubusercontent.com%2Fkidehen%2Fmeta-way%2Fmain%2Fdata%2Fupper-ontology.ttl%23%3E%0D%0A%0D%0ASELECT+%3Fprod+%3FupperClass+%28COUNT%28%3FupperClass%29+AS+%3Fcount%29++%0D%0AFROM+%3Chttps%3A%2F%2Fraw.githubusercontent.com%2Fkidehen%2Fmeta-way%2Fmain%2Fdata%2Fupper-ontology.ttl%3E+%0D%0AFROM+%3Chttps%3A%2F%2Fgithub.com%2Fkidehen%2Fmeta-way%2Fblob%2Fmain%2Fdata%2Fkrr.ttl%3E+%0D%0AFROM+%3Chttps%3A%2F%2Fgithub.com%2Fkidehen%2Fmeta-way%2Fblob%2Fmain%2Fdata%2Faii.ttl%3E%0D%0A%0D%0AWHERE+%7B%0D%0A++++++++%3Fs+rdfs%3AsubClassOf%2B+%3FupperClass+.%0D%0A++++++++%3Fs+rdfs%3AisDefinedBy+%3Fprod.%0D%0A++++++++VALUES+%3FupperClass+%7B%3AUnit+%3AFood%7D+%0D%0A%7D+%0D%0AGROUP+BY+%3Fprod+%3FupperClass&should-sponge=&format=text%2Fx-html%2Btr&timeout=30000000)
+* [Live Query Editor Page](http://linkeddata.uriburner.com/sparql/?default-graph-uri=&qtxt=PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+%3A+%3Chttps%3A%2F%2Fraw.githubusercontent.com%2Fkidehen%2Fmeta-way%2Fmain%2Fdata%2Fupper-ontology.ttl%23%3E%0D%0A%0D%0ASELECT+%3Fprod+%3FupperClass+%28COUNT%28%3FupperClass%29+AS+%3Fcount%29++%0D%0AFROM+%3Chttps%3A%2F%2Fraw.githubusercontent.com%2Fkidehen%2Fmeta-way%2Fmain%2Fdata%2Fupper-ontology.ttl%3E+%0D%0AFROM+%3Chttps%3A%2F%2Fgithub.com%2Fkidehen%2Fmeta-way%2Fblob%2Fmain%2Fdata%2Fkrr.ttl%3E+%0D%0AFROM+%3Chttps%3A%2F%2Fgithub.com%2Fkidehen%2Fmeta-way%2Fblob%2Fmain%2Fdata%2Faii.ttl%3E%0D%0A%0D%0AWHERE+%7B%0D%0A++++++++%3Fs+rdfs%3AsubClassOf%2B+%3FupperClass+.%0D%0A++++++++%3Fs+rdfs%3AisDefinedBy+%3Fprod.%0D%0A++++++++VALUES+%3FupperClass+%7B%3AUnit+%3AFood%7D+%0D%0A%7D+%0D%0AGROUP+BY+%3Fprod+%3FupperClass&should-sponge=&format=text%2Fx-html%2Btr&timeout=30000000)
+## Scrambled eggs with olive oil (extra virgin) and sea salt. 
 ```
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX foo: <https://upper-ontology.example.com/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX krr: <https://krr.example.com/>
+PREFIX : <https://raw.githubusercontent.com/kidehen/meta-way/main/data/upper-ontology.ttl#>
 
-SELECT * WHERE {
-?s krr:yee3zei8 krr:ootafai8i .
-?s ?p ?o  .
-  OPTIONAL {?p rdfs:label ?predicateLabel.}
-  OPTIONAL {?o rdfs:label ?objectLabel}
-}
+SELECT DISTINCT * 
+FROM <https://raw.githubusercontent.com/kidehen/meta-way/main/data/upper-ontology.ttl> 
+FROM <https://github.com/kidehen/meta-way/blob/main/data/krr.ttl> 
+FROM <https://github.com/kidehen/meta-way/blob/main/data/aii.ttl>
+WHERE {
+        ?s krr:yee3zei8 krr:ootafai8i .
+        ?s ?p ?o  .
+        OPTIONAL {?p rdfs:label ?predicateLabel.}
+        OPTIONAL {?o rdfs:label ?objectLabel}
+     }
 ```
 |s                                |p                                               |o                                |predicateLabel|objectLabel                                              |FIELD6|
 |---------------------------------|------------------------------------------------|---------------------------------|--------------|---------------------------------------------------------|------|
@@ -60,19 +70,25 @@ SELECT * WHERE {
 |https://krr.example.com/seoqu4vi |http://www.w3.org/1999/02/22-rdf-syntax-ns#value|3                                |value         |                                                         |      |
 |https://krr.example.com/seoqu4vi |http://www.w3.org/2000/01/rdf-schema#label      |Recipe Eggs                      |              |                                                         |      |
 
+* [Live Query Results Page](http://linkeddata.uriburner.com/sparql/?default-graph-uri=&query=PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0D%0APREFIX+krr%3A+%3Chttps%3A%2F%2Fkrr.example.com%2F%3E%0D%0APREFIX+%3A+%3Chttps%3A%2F%2Fraw.githubusercontent.com%2Fkidehen%2Fmeta-way%2Fmain%2Fdata%2Fupper-ontology.ttl%23%3E%0D%0A%0D%0ASELECT+DISTINCT+*+%0D%0AFROM+%3Chttps%3A%2F%2Fraw.githubusercontent.com%2Fkidehen%2Fmeta-way%2Fmain%2Fdata%2Fupper-ontology.ttl%3E+%0D%0AFROM+%3Chttps%3A%2F%2Fgithub.com%2Fkidehen%2Fmeta-way%2Fblob%2Fmain%2Fdata%2Fkrr.ttl%3E+%0D%0AFROM+%3Chttps%3A%2F%2Fgithub.com%2Fkidehen%2Fmeta-way%2Fblob%2Fmain%2Fdata%2Faii.ttl%3E%0D%0AWHERE+%7B%0D%0A++++++++%3Fs+krr%3Ayee3zei8+krr%3Aootafai8i+.%0D%0A++++++++%3Fs+%3Fp+%3Fo++.%0D%0A++++++++OPTIONAL+%7B%3Fp+rdfs%3Alabel+%3FpredicateLabel.%7D%0D%0A++++++++OPTIONAL+%7B%3Fo+rdfs%3Alabel+%3FobjectLabel%7D%0D%0A+++++%7D&should-sponge=&format=text%2Fx-html%2Btr&timeout=30000000)
+* [Live Query Editor Page](http://linkeddata.uriburner.com/sparql/?default-graph-uri=&qtxt=PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0D%0APREFIX+krr%3A+%3Chttps%3A%2F%2Fkrr.example.com%2F%3E%0D%0APREFIX+%3A+%3Chttps%3A%2F%2Fraw.githubusercontent.com%2Fkidehen%2Fmeta-way%2Fmain%2Fdata%2Fupper-ontology.ttl%23%3E%0D%0A%0D%0ASELECT+DISTINCT+*+%0D%0AFROM+%3Chttps%3A%2F%2Fraw.githubusercontent.com%2Fkidehen%2Fmeta-way%2Fmain%2Fdata%2Fupper-ontology.ttl%3E+%0D%0AFROM+%3Chttps%3A%2F%2Fgithub.com%2Fkidehen%2Fmeta-way%2Fblob%2Fmain%2Fdata%2Fkrr.ttl%3E+%0D%0AFROM+%3Chttps%3A%2F%2Fgithub.com%2Fkidehen%2Fmeta-way%2Fblob%2Fmain%2Fdata%2Faii.ttl%3E%0D%0AWHERE+%7B%0D%0A++++++++%3Fs+krr%3Ayee3zei8+krr%3Aootafai8i+.%0D%0A++++++++%3Fs+%3Fp+%3Fo++.%0D%0A++++++++OPTIONAL+%7B%3Fp+rdfs%3Alabel+%3FpredicateLabel.%7D%0D%0A++++++++OPTIONAL+%7B%3Fo+rdfs%3Alabel+%3FobjectLabel%7D%0D%0A+++++%7D&should-sponge=&format=text%2Fx-html%2Btr&timeout=30000000)
 ## Fridge and shelf of Alice
 ```
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX foo: <https://upper-ontology.example.com/>
+PREFIX : <https://raw.githubusercontent.com/kidehen/meta-way/main/data/upper-ontology.ttl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix aii: <https://aii.example.com/>
 
-SELECT * WHERE {
-?s aii:ahch9aix aii:pah7chae .
-?s ?p ?o  .
-  OPTIONAL {?p rdfs:label ?predicateLabel.}
-  OPTIONAL {?o rdfs:label ?objectLabel}
-}
+SELECT DISTINCT * 
+FROM <https://raw.githubusercontent.com/kidehen/meta-way/main/data/upper-ontology.ttl> 
+FROM <https://github.com/kidehen/meta-way/blob/main/data/krr.ttl> 
+FROM <https://github.com/kidehen/meta-way/blob/main/data/aii.ttl>
+WHERE {
+        ?s aii:ahch9aix aii:pah7chae .
+        ?s ?p ?o  .
+        OPTIONAL {?p rdfs:label ?predicateLabel.}
+        OPTIONAL {?o rdfs:label ?objectLabel}
+} 
 ```
 |s                               |p                                               |o                                |predicateLabel|objectLabel             |
 |--------------------------------|------------------------------------------------|---------------------------------|--------------|------------------------|
@@ -94,4 +110,5 @@ SELECT * WHERE {
 |https://aii.example.com/deegho6c|http://www.w3.org/1999/02/22-rdf-syntax-ns#value|1                                |value         |                        |
 |https://aii.example.com/deegho6c|http://www.w3.org/2000/01/rdf-schema#label      |Alice's Salt                     |              |                        |
 
-
+* [Live Query Results Page](http://linkeddata.uriburner.com/sparql/?default-graph-uri=&query=PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+%3A+%3Chttps%3A%2F%2Fraw.githubusercontent.com%2Fkidehen%2Fmeta-way%2Fmain%2Fdata%2Fupper-ontology.ttl%23%3E%0D%0APREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0D%0Aprefix+aii%3A+%3Chttps%3A%2F%2Faii.example.com%2F%3E%0D%0A%0D%0ASELECT+DISTINCT+*+%0D%0AFROM+%3Chttps%3A%2F%2Fraw.githubusercontent.com%2Fkidehen%2Fmeta-way%2Fmain%2Fdata%2Fupper-ontology.ttl%3E+%0D%0AFROM+%3Chttps%3A%2F%2Fgithub.com%2Fkidehen%2Fmeta-way%2Fblob%2Fmain%2Fdata%2Fkrr.ttl%3E+%0D%0AFROM+%3Chttps%3A%2F%2Fgithub.com%2Fkidehen%2Fmeta-way%2Fblob%2Fmain%2Fdata%2Faii.ttl%3E%0D%0AWHERE+%7B%0D%0A++++++++%3Fs+aii%3Aahch9aix+aii%3Apah7chae+.%0D%0A++++++++%3Fs+%3Fp+%3Fo++.%0D%0A++++++++OPTIONAL+%7B%3Fp+rdfs%3Alabel+%3FpredicateLabel.%7D%0D%0A++++++++OPTIONAL+%7B%3Fo+rdfs%3Alabel+%3FobjectLabel%7D%0D%0A%7D+&should-sponge=&format=text%2Fx-html%2Btr&timeout=30000000)
+* [Live Query Editor Page](http://linkeddata.uriburner.com/sparql/?default-graph-uri=&qtxt=PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+%3A+%3Chttps%3A%2F%2Fraw.githubusercontent.com%2Fkidehen%2Fmeta-way%2Fmain%2Fdata%2Fupper-ontology.ttl%23%3E%0D%0APREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0D%0Aprefix+aii%3A+%3Chttps%3A%2F%2Faii.example.com%2F%3E%0D%0A%0D%0ASELECT+DISTINCT+*+%0D%0AFROM+%3Chttps%3A%2F%2Fraw.githubusercontent.com%2Fkidehen%2Fmeta-way%2Fmain%2Fdata%2Fupper-ontology.ttl%3E+%0D%0AFROM+%3Chttps%3A%2F%2Fgithub.com%2Fkidehen%2Fmeta-way%2Fblob%2Fmain%2Fdata%2Fkrr.ttl%3E+%0D%0AFROM+%3Chttps%3A%2F%2Fgithub.com%2Fkidehen%2Fmeta-way%2Fblob%2Fmain%2Fdata%2Faii.ttl%3E%0D%0AWHERE+%7B%0D%0A++++++++%3Fs+aii%3Aahch9aix+aii%3Apah7chae+.%0D%0A++++++++%3Fs+%3Fp+%3Fo++.%0D%0A++++++++OPTIONAL+%7B%3Fp+rdfs%3Alabel+%3FpredicateLabel.%7D%0D%0A++++++++OPTIONAL+%7B%3Fo+rdfs%3Alabel+%3FobjectLabel%7D%0D%0A%7D+&should-sponge=&format=text%2Fx-html%2Btr&timeout=30000000)
