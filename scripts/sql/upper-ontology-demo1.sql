@@ -228,5 +228,40 @@ WHERE {
         ?s rdfs:subClassOf+ ?upperClass .
         ?s rdfs:isDefinedBy ?prod.
         VALUES ?upperClass {:Unit :Food} 
-} 
-GROUP BY ?prod ?upperClass
+      } 
+GROUP BY ?prod ?upperClass ;
+
+SPARQL 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX krr: <https://krr.example.com/>
+PREFIX : <https://raw.githubusercontent.com/kidehen/meta-way/main/data/upper-ontology.ttl#>
+
+SELECT DISTINCT * 
+FROM <https://raw.githubusercontent.com/kidehen/meta-way/main/data/upper-ontology.ttl> 
+FROM <https://github.com/kidehen/meta-way/blob/main/data/krr.ttl> 
+FROM <https://github.com/kidehen/meta-way/blob/main/data/aii.ttl>
+WHERE {
+        ?s krr:yee3zei8 krr:ootafai8i .
+        ?s ?p ?o  .
+        OPTIONAL {?p rdfs:label ?predicateLabel.}
+        OPTIONAL {?o rdfs:label ?objectLabel}
+     } ;
+
+SPARQL
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX : <https://raw.githubusercontent.com/kidehen/meta-way/main/data/upper-ontology.ttl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix aii: <https://aii.example.com/>
+
+SELECT DISTINCT * 
+FROM <https://raw.githubusercontent.com/kidehen/meta-way/main/data/upper-ontology.ttl> 
+FROM <https://github.com/kidehen/meta-way/blob/main/data/krr.ttl> 
+FROM <https://github.com/kidehen/meta-way/blob/main/data/aii.ttl>
+WHERE {
+        ?s aii:ahch9aix aii:pah7chae .
+        ?s ?p ?o  .
+        OPTIONAL {?p rdfs:label ?predicateLabel.}
+        OPTIONAL {?o rdfs:label ?objectLabel}
+} ;
+
