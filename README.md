@@ -40,25 +40,25 @@ SELECT * WHERE {
   OPTIONAL {?o rdfs:label ?objectLabel}
 }
 ```
-|s                                |p                                               |o                                |predicateLabel|objectLabel                                              |FIELD6|
-|---------------------------------|------------------------------------------------|---------------------------------|--------------|---------------------------------------------------------|------|
-|https://krr.example.com/uoleith3a|https://upper-ontology.example.com/hasUnit      |https://krr.example.com/eich9ahbi|has unit      |Tea Spoon                                                |      |
-|https://krr.example.com/uoleith3a|https://krr.example.com/thie2en                 |https://krr.example.com/joow8vou |origin        |Sea                                                      |      |
-|https://krr.example.com/uoleith3a|http://www.w3.org/1999/02/22-rdf-syntax-ns#type |https://krr.example.com/yei4ha8j |type          |Salt                                                     |      |
-|https://krr.example.com/uoleith3a|https://krr.example.com/yee3zei8                |https://krr.example.com/ootafai8i|ingredient of |Scrambled eggs with olive oil (extra virgin) and sea salt|      |
-|https://krr.example.com/uoleith3a|http://www.w3.org/1999/02/22-rdf-syntax-ns#value|1                                |value         |                                                         |      |
-|https://krr.example.com/uoleith3a|http://www.w3.org/2000/01/rdf-schema#label      |Recipe Salt                      |              |                                                         |      |
-|https://krr.example.com/iezi0oht |https://upper-ontology.example.com/hasUnit      |https://krr.example.com/uw8feu2ji|has unit      |Gram                                                     |      |
-|https://krr.example.com/iezi0oht |http://www.w3.org/1999/02/22-rdf-syntax-ns#type |https://krr.example.com/ohdae5a  |type          |Olive oil                                                |      |
-|https://krr.example.com/iezi0oht |https://krr.example.com/yee3zei8                |https://krr.example.com/ootafai8i|ingredient of |Scrambled eggs with olive oil (extra virgin) and sea salt|      |
-|https://krr.example.com/iezi0oht |https://krr.example.com/rueth0du                |https://krr.example.com/teingee9 |quality       |Extra Virgin                                             |      |
-|https://krr.example.com/iezi0oht |http://www.w3.org/1999/02/22-rdf-syntax-ns#value|10                               |value         |                                                         |      |
-|https://krr.example.com/iezi0oht |http://www.w3.org/2000/01/rdf-schema#label      |Recipe Olive Oil                 |              |                                                         |      |
-|https://krr.example.com/seoqu4vi |https://upper-ontology.example.com/hasUnit      |https://krr.example.com/aew8if5i |has unit      |Count                                                    |      |
-|https://krr.example.com/seoqu4vi |http://www.w3.org/1999/02/22-rdf-syntax-ns#type |https://krr.example.com/thutal0u |type          |Egg                                                      |      |
-|https://krr.example.com/seoqu4vi |https://krr.example.com/yee3zei8                |https://krr.example.com/ootafai8i|ingredient of |Scrambled eggs with olive oil (extra virgin) and sea salt|      |
-|https://krr.example.com/seoqu4vi |http://www.w3.org/1999/02/22-rdf-syntax-ns#value|3                                |value         |                                                         |      |
-|https://krr.example.com/seoqu4vi |http://www.w3.org/2000/01/rdf-schema#label      |Recipe Eggs                      |              |                                                         |      |
+|s                                |p                                               |o                                |predicateLabel|objectLabel                   
+|---------------------------------|------------------------------------------------|---------------------------------|--------------|---------------------------------------------------------|
+|https://krr.example.com/uoleith3a|https://upper-ontology.example.com/hasUnit      |https://krr.example.com/eich9ahbi|has unit      |Tea Spoon                                                |
+|https://krr.example.com/uoleith3a|https://krr.example.com/thie2en                 |https://krr.example.com/joow8vou |origin        |Sea                                                      |
+|https://krr.example.com/uoleith3a|http://www.w3.org/1999/02/22-rdf-syntax-ns#type |https://krr.example.com/yei4ha8j |type          |Salt                                                     |
+|https://krr.example.com/uoleith3a|https://krr.example.com/yee3zei8                |https://krr.example.com/ootafai8i|ingredient of |Scrambled eggs with olive oil (extra virgin) and sea salt| 
+|https://krr.example.com/uoleith3a|http://www.w3.org/1999/02/22-rdf-syntax-ns#value|1                                |value         |                                                         |
+|https://krr.example.com/uoleith3a|http://www.w3.org/2000/01/rdf-schema#label      |Recipe Salt                      |              |                                                         |
+|https://krr.example.com/iezi0oht |https://upper-ontology.example.com/hasUnit      |https://krr.example.com/uw8feu2ji|has unit      |Gram                                                     |
+|https://krr.example.com/iezi0oht |http://www.w3.org/1999/02/22-rdf-syntax-ns#type |https://krr.example.com/ohdae5a  |type          |Olive oil                                                |
+|https://krr.example.com/iezi0oht |https://krr.example.com/yee3zei8                |https://krr.example.com/ootafai8i|ingredient of |Scrambled eggs with olive oil (extra virgin) and sea salt| 
+|https://krr.example.com/iezi0oht |https://krr.example.com/rueth0du                |https://krr.example.com/teingee9 |quality       |Extra Virgin                                             |
+|https://krr.example.com/iezi0oht |http://www.w3.org/1999/02/22-rdf-syntax-ns#value|10                               |value         |                                                         |
+|https://krr.example.com/iezi0oht |http://www.w3.org/2000/01/rdf-schema#label      |Recipe Olive Oil                 |              |                                                         |
+|https://krr.example.com/seoqu4vi |https://upper-ontology.example.com/hasUnit      |https://krr.example.com/aew8if5i |has unit      |Count                                                    |
+|https://krr.example.com/seoqu4vi |http://www.w3.org/1999/02/22-rdf-syntax-ns#type |https://krr.example.com/thutal0u |type          |Egg                                                      |
+|https://krr.example.com/seoqu4vi |https://krr.example.com/yee3zei8                |https://krr.example.com/ootafai8i|ingredient of |Scrambled eggs with olive oil (extra virgin) and sea salt|
+|https://krr.example.com/seoqu4vi |http://www.w3.org/1999/02/22-rdf-syntax-ns#value|3                                |value         |                                                         |
+|https://krr.example.com/seoqu4vi |http://www.w3.org/2000/01/rdf-schema#label      |Recipe Eggs                      |              |                                                         |
 
 ## Fridge and shelf of Alice
 ```
@@ -89,7 +89,7 @@ SELECT * WHERE {
 |https://aii.example.com/gee8ovee|https://aii.example.com/esahj3ju                |2022-03-10                       |expiry date   |                        |
 |https://aii.example.com/gee8ovee|http://www.w3.org/2000/01/rdf-schema#label      |Alice's Oil                      |              |                        |
 |https://aii.example.com/deegho6c|https://aii.example.com/ahch9aix                |https://aii.example.com/pah7chae |customer      |Alice                   |
-|https://aii.example.com/deegho6c|https://upper-ontology.example.com/hasUnit      |https://aii.example.com/eegh6vuy |has unit      |Kilo Gram               |
+|https://aii.example.com/deegho6c|https://upper-ontology.example.com/hasUnit      |https://aii.example.com/eegh6vuy |has unit      |Kilogram               |
 |https://aii.example.com/deegho6c|http://www.w3.org/1999/02/22-rdf-syntax-ns#type |https://aii.example.com/eizoh2so |type          |Sea Salt                |
 |https://aii.example.com/deegho6c|http://www.w3.org/1999/02/22-rdf-syntax-ns#value|1                                |value         |                        |
 |https://aii.example.com/deegho6c|http://www.w3.org/2000/01/rdf-schema#label      |Alice's Salt                     |              |                        |
