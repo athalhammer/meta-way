@@ -47,7 +47,7 @@ aii:utu4eihia a rdfs:Class ;
 aii:eegh6vuy a rdfs:Class ;
     rdfs:isDefinedBy <https://aii.example.com/> ;
     rdfs:subClassOf foo:Unit ;
-    rdfs:label "Kilo Gram" .
+    rdfs:label "Kilogram" .
 
 aii:eer4kooh a rdfs:Class ;
     rdfs:isDefinedBy <https://aii.example.com/> ;
